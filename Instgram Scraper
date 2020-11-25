@@ -5,9 +5,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import time
-
 import os
 import wget
+
 
 # specify the path to chromedriver.exe (download and save on your computer)
 driver = webdriver.Chrome("  ")
@@ -29,7 +29,6 @@ password.send_keys("  ")
 button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
 
 # We are logged in!
-
 not_now = WebDriverWait(driver, 5).until(
     EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Not Now')]"))).click()
 
@@ -42,6 +41,7 @@ searchbox.clear()
 
 # enter hashtag to be searched
 keyword = "#  "
+
 searchbox.send_keys(keyword)
 
 # Wait for 5 seconds
@@ -58,6 +58,8 @@ namecounter = 0  # counter to save picture name in
 
 #enter path where files will be saved
 path = "   "
+
+
 elems = driver.find_elements_by_xpath('.//a[@href]')  # get all URLS in the page
 all = []
 
